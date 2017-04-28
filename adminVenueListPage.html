@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Store List</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="BootStrap/bootstrap.min.css">
+    <link rel="stylesheet" href="BootStrap/bootstrap.css">
+    <link href="css/iRadarCss/home.css" type="text/css" rel="stylesheet"/>
+    <link href="css/iRadarCss/common.css" type="text/css" rel="stylesheet"/>
+    <link href="css/iRadarCss/userlist.css" type="text/css" rel="stylesheet"/>
+    <link href="css/iRadarCss/special-list.css" type="text/css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#storelist_table').DataTable();
+        } );
+    </script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+
+            $('input[type=checkbox]').click(function() {
+
+                thisCheckbox	= $(this);
+
+                if(thisCheckbox.attr('checked'))
+                    thisCheckbox.attr('checked', '');
+                else
+                    thisCheckbox.attr('checked', 'checked');
+            });
+
+            $('table tr').click(function() {
+
+                checkBox = $(this).children('td').children('input[type=checkbox]');
+
+                if(checkBox.attr('checked'))
+                    checkBox.attr('checked', '');
+                else
+                    checkBox.attr('checked', 'checked');
+            });
+
+            $('.check-all').click(function() {
+
+                checkBox	= $('table tr').children('td').children('input[type=checkbox]');
+
+                if($(this).attr('checked'))
+                    checkBox.attr('checked', 'checked');
+                else
+                    checkBox.attr('checked', '');
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-3">
+                <img class="img-responsive" src="img/iRadarLogo.png" alt="Logo" style="width:300px;height:100px;" >
+            </div>
+
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="icon-bar customDiv">
+                                <a class="active" href="homepage.html"><i class="fa fa-home"></i></a>
+                                <a href=""><i class="fa fa-edit"></i></a>
+                                <a href="specialListPage.html"><i class="fa fa-list"></i></a>
+                                <a href="beaconsListPage.html"><i class="fa fa-bluetooth"></i></a>
+                                <a href="reportListPage.html"><i class="fa fa-download"></i></a>
+                                <a href="userProfilePage.html"><i class="fa fa-user"></i></a>
+                                <a href="#"><i class="fa fa-sign-out"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <div class="dropdown">
+                                <button class="dropbtn">Admin</button>
+                                <div class="dropdown-content">
+                                    <a href="adminVenueListPage.html">Store</a>
+                                    <a href="adminSystemPropertiesPage.html">System Properties</a>
+                                    <a href="adminSystemLogPage.html">System Log</a>
+                                    <a href="userListPage.html">User List</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <img class="img-responsive" src="img/pusheen14.png" alt="Logo" style="width:300px;height:50px;">
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <a href="userProfilePage.html"><label name="user_name" id="user_name" style="height:50px;color:#000000">Login User</label></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <hr>
+    <div  style="background:#3f98d4;">
+        <div class="container userListBg" >
+            <div class="row">
+                <div class="col-md-1"  style="margin-top:20px" >
+                    <a class="btn btn-warning" href="addUserPage.html"> Add New Store </a>
+                </div>
+
+                <div class="col-md-4" >
+                </div>
+
+                <div class="col-md-7">
+                    <h2 id="heading-1" class="pull-left" style="color:#FFFFFF">Store Details</h2>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="storelist_table" style="background:#FFFFFF;"
+                           class="table table-bordered" cellspacing="0" width="100%" >
+                        <thead style="background-color:#ffa500">
+                        <tr>
+                            <th><input type="checkbox" class="check-all" /></th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+
+                        <tfoot style="background-color:#ffa500">
+                        <tr>
+                            <th><input type="checkbox" class="check-all" /></th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                        </tfoot>
+
+                        <tbody style="color: #000000">
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>1</td>
+                            <td>Melbourne Central</td>
+                            <td>Melbourne Central Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>2</td>
+                            <td>Sounthern Cross</td>
+                            <td>Sounthern Cross Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>3</td>
+                            <td>Ivenhoe Centre</td>
+                            <td>Ivenhoe Centre Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>4</td>
+                            <td>Richmoond Icon</td>
+                            <td>Richmoond Icon Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>5</td>
+                            <td>Elizabeth Street</td>
+                            <td>Elizabeth Street Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>6</td>
+                            <td>Elizabeth Street</td>
+                            <td>Elizabeth Street Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>7</td>
+                            <td>Box Hill</td>
+                            <td>Box Hill Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>8</td>
+                            <td>Clayton</td>
+                            <td>Clayton Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>9</td>
+                            <td>Cranburn</td>
+                            <td>Cranburn Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>10</td>
+                            <td>Doncaster</td>
+                            <td>Doncaster Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>11</td>
+                            <td>Fitzroy</td>
+                            <td>Fitzroy Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>12</td>
+                            <td>Forest Hill</td>
+                            <td>Forest Hill Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>13</td>
+                            <td>Hamilton</td>
+                            <td>Hamilton Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>14</td>
+                            <td>Northcode</td>
+                            <td>Northcode Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="checkbox" />
+                            <td>15</td>
+                            <td>Geelong West</td>
+                            <td>Geelong West Store</td>
+                            <td><a href="adminEditVenuePage.html" class="btn btn-success">Edit</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background:#3f98d4;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5"  style="margin-bottom:20px" >
+                    <a class="btn btn-warning" href="admin_add_venue.html"> Delete Store </a>
+                </div>
+                <div class="col-md-7">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <footer>
+                <p class="text-center">&copy; Copyright 2017 Shine Solutions</p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

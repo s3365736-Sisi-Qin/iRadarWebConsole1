@@ -1,0 +1,124 @@
+
+/* This css file is used for defining common style for the whole website*/
+
+.customNav{
+    margin-top: 45px;
+    font-size: 25px; /*Common style for the navigation in top of the website*/
+}
+
+.customDiv{
+  height: 50px;
+    margin-top: 50px;
+    font-size: 25px;
+    padding-bottom: 10px; /*Common style for every pages*/
+}
+
+.mainBackground{
+    background-color: #3f98d4;
+    height: 800px;
+    padding-top: 150px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-top: 1px; /* Common background style for every pages*/ 
+}
+
+.logo{
+    margin-top: 20px;
+    
+}
+
+.icon-bar {
+    width: 100%; /* Full-width */
+    background-color: #555; 
+    overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+    float: left; /* Float links side by side */
+    text-align: center; /* Center-align text */
+    width: 14.23%; /* Equal width (5 icons with 16.5% width each = 100%)
+    padding: 12px 0; /* Some top and bottom padding */
+    transition: all 0.3s ease; /* Add transition for hover effects */
+    color: white; /* White text color */
+    font-size: 36px; 
+}
+
+.icon-bar a:hover {
+    background-color: orange; /* Add a hover color */
+}
+
+.active {
+    background-color:orange; /* #4CAF50Add an active/current color */
+}
+
+.a-orange{
+    color:orange; 
+    font-weight:600;
+}
+
+/*.selection{
+    background: transparent;
+    border: none;
+    color: orange;
+    width: 120px;
+    height: 100%; 
+    font-size-adjust: auto;
+    font-size: 20px;/*define the style in the drop-down menu in the top bar menu*/
+    
+}*/
+div div a:hover{
+    color:aqua;
+}
+
+/* Style The Dropdown Button At Top Navigation Bar */
+.dropbtn {
+    background-color: #555;/*#4CAF50*/
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    width: 80px;
+    border: none;
+    cursor: pointer;
+
+ 
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+/*end of css style for Admin dropdown menu*/
+

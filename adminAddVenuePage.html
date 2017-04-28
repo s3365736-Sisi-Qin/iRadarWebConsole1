@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Store Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/BootStrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/BootStrap/bootstrap.css">
+    <link href="css/iRadarCss/home.css" type="text/css" rel="stylesheet"/>
+    <link href="css/iRadarCss/common.css" type="text/css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        function formCheck()
+        {
+            for(var i=0;i<document.form.elements.length-1;i++)
+            {
+                if(document.form.elements[i].value=="")
+                {
+                    alert("Warning--You need to fill all information!");
+                    document.form.elements[i].focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-3">
+                <img class="img-responsive" src="img/iRadarLogo.png" alt="Logo" style="width:300px;height:100px;" >
+            </div>
+
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="icon-bar customDiv">
+                                <a class="active" href="homepage.html"><i class="fa fa-home"></i></a>
+                                <a href=""><i class="fa fa-edit"></i></a>
+                                <a href="specialListPage.html"><i class="fa fa-list"></i></a>
+                                <a href="beaconsListPage.html"><i class="fa fa-bluetooth"></i></a>
+                                <a href="reportListPage.html"><i class="fa fa-download"></i></a>
+                                <a href="userProfilePage.html"><i class="fa fa-user"></i></a>
+                                <a href="#"><i class="fa fa-sign-out"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <div class="dropdown">
+                                <button class="dropbtn">Admin</button>
+                                <div class="dropdown-content">
+                                    <a href="adminVenueListPage.html">Store</a>
+                                    <a href="adminSystemPropertiesPage.html">System Properties</a>
+                                    <a href="adminSystemLogPage.html">System Log</a>
+                                    <a href="userListPage.html">User List</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <img class="img-responsive" src="img/pusheen14.png" alt="Logo" style="width:300px;height:50px;">
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <a href="userProfilePage.html"><label name="user_name" id="user_name" style="height:50px;color:#000000">Login User</label></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <hr>
+
+    <div style="background:#3f98d4;">
+        <div style="background:#3f98d4;" class="container" >
+            <h2 id="heading-1" class="text-center"  style="color:#FFFFFF">Add New Store</h2>
+        </div>
+    </div>
+
+    <div  style="background:#3f98d4;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form role="form" name="form" class="form" method="post" action="" onSubmit="return formCheck()" >
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Store ID :</label>
+                            <input type="text" name="v_id" class="form-control" placeholder="Enter venue ID...">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Store Name :</label>
+                            <input type="text" size="100" name="v_name" class="form-control"  placeholder="Enter venue name..." >
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Store Description : </label>
+                            <textarea  name="v_descrip"  class="form-control" placeholder="Enter venue description..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="active" value="active" style="width: 34px" onclick=""/>
+                            <label style="color:#FFFFFF">Active</label>
+                        </div>
+
+                        <div class="text-center">
+                            <input class="btn btn-warning" type="submit" value="Submit">
+                            <a href="adminVenueListPage.html" class="btn btn-warning">Back</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid">
+        <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <footer>
+                        <p class="text-center">&copy; Copyright 2017 Shine Solutions</p>
+                    </footer>
+                </div>
+            </div>
+    </div>
+</body>
+
+
+
+</html>

@@ -1,0 +1,63 @@
+
+.listBg{
+    background-color: #3f98d4;
+    height: 800px;
+    padding-top: 150px;
+    text-align: left;
+    font-size: 25px;
+    color: white;
+    margin-top: 1px;
+}
+
+#specialInput {
+    background-image: url('/img/searchIcon.png'); /* Add a search icon to input */
+    background-position: 3px 5px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 18px; /* Increase font-size */
+    padding: 12px 20px 12px 50px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+    margin-top: 10px;
+    color: #283593;
+}
+
+#specialTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+}
+
+#specialTable th, #specialTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+}
+
+#specialTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd; 
+    font-style: oblique;
+}
+
+#specialTable tr.header {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #ffa500;
+     font-style: normal;
+   
+}
+
+#specialTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    color: aqua;
+}
+
+.addNewBtn:{
+    color: white;
+    height: 50px;
+    font-size: 30px;
+}
+
+div div a:hover{
+    color:aqua;
+}

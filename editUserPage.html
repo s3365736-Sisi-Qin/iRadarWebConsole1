@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User Details</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="BootStrap/bootstrap.min.css">
+    <link rel="stylesheet" href="BootStrap/bootstrap.css">
+    <link href="css/iRadarCss/home.css" type="text/css" rel="stylesheet"/>
+    <link href="css/iRadarCss/common.css" type="text/css" rel="stylesheet"/>
+    <link href="css/iRadarCss/userlist.css" type="text/css" rel="stylesheet"/>
+    <link href="css/iRadarCss/special-list.css" type="text/css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        function formCheck()
+        {
+            for(var i=0;i<document.form.elements.length-1;i++)
+            {
+                if(document.form.elements[i].value=="")
+                {
+                    alert("Warning--You need to fill all information!");
+                    document.form.elements[i].focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div  class="col-md-3">
+                <img class="img-responsive" src="img/iRadarLogo.png" alt="Logo" style="width:300px;height:100px;" >
+            </div>
+
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="icon-bar customDiv">
+                                <a class="active" href="homepage.html"><i class="fa fa-home"></i></a>
+                                <a href=""><i class="fa fa-edit"></i></a>
+                                <a href="specialListPage.html"><i class="fa fa-list"></i></a>
+                                <a href="beaconsListPage.html"><i class="fa fa-bluetooth"></i></a>
+                                <a href="reportListPage.html"><i class="fa fa-download"></i></a>
+                                <a href="userProfilePage.html"><i class="fa fa-user"></i></a>
+                                <a href="#"><i class="fa fa-sign-out"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <div class="dropdown">
+                                <button class="dropbtn">Admin</button>
+                                <div class="dropdown-content">
+                                    <a href="adminVenueListPage.html">Store</a>
+                                    <a href="adminSystemPropertiesPage.html">System Properties</a>
+                                    <a href="adminSystemLogPage.html">System Log</a>
+                                    <a href="userListPage.html">User List</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <img class="img-responsive" src="img/pusheen14.png" alt="Logo" style="width:300px;height:50px;">
+                        </div>
+
+                        <div class="col-md-1"  style="width: 95px; height:50px; margin-top:50px; font-size:18px;">
+                            <a href="userProfilePage.html"><label name="user_name" id="user" style="height:50px;color:#000000">Login User</label></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <hr>
+
+    <div style="background:#3f98d4;">
+        <div class="container" >
+            <h2 id="heading-1" class="text-center" style="color:#FFFFFF">User Details</h2>
+        </div>
+    </div>
+
+    <div  style="background:#3f98d4;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+
+                <div class="col-md-10">
+                    <form role="form" name="form" class="form" method="post" action="" onSubmit="return formCheck()" >
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Store :</label>
+                            <select name="store" id="store" style="width: 100%; height: 25px">
+
+                                <!--it means that the value of store which stores in database-->
+                                <option value ="original_store_value" selected = "selected"></option>
+                                <option value ="5642779036221440">Melbourne Central</option>
+                                <option value ="5669544198668288">Elizabeth Street</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">First Name :</label>
+                            <input type="text" name="first_name" id="first_name" size="40" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Last Name :</label>
+                            <input type="text" name="last_name" id="last_name" size="40" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">User Name :</label>
+                            <input type="text" name="user_name" id="user_name" size="40" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Email :</label>
+                            <input type="email" name="email" id="email" size="100" id="email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Role :</label>
+                            <select name="role" id="role" style="width: 100%; height: 25px">
+                                <!--it means that the value of role which stores in database-->
+                                <option value ="original_role_value" selected = "selected"></option>
+                                <option value ="store_employee">Employee</option>
+                                <option value ="store_manager">Store Manager</option>
+                                <option value ="admin">HQ Admin</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Avatar: </label>
+                            <input type="text" name="avatar" id="avatar" size="400" class="form-control">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label style="color:#FFFFFF">Last Login: </label>
+                            <input type="text"  name="last_login" id="last_login" disabled="true" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="active" id="active"  style="width: 34px" onclick=""/>
+                            <label style="color:#FFFFFF">Active</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="locked_out" id="locked_out" style="width: 34px" onclick=""/>
+                            <label style="color:#FFFFFF">Locked out</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="checkbox" name="password_needs_reset" id="password_needs_reset" style="width: 34px" onclick=""/>
+                            <label style="color:#FFFFFF">Password needs reset</label>
+                        </div>
+
+                        <div class="text-center">
+                            <input class="btn btn-warning" type="submit" value="Edit" >
+
+                            <a href="userListPage.html" class="btn btn-warning">Back</a>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="col-md-1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <footer>
+                <p class="text-center">&copy; Copyright 2017 Shine Solutions</p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

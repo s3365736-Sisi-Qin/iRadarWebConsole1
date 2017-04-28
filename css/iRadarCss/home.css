@@ -1,0 +1,26 @@
+
+
+.mainBg{
+    background-color: #3f98d4;
+    height: 800px;
+    padding-top: 150px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin-top: 1px;
+}
+.homeImg{
+    display:inline-block;
+    border-style: solid;
+    border-width: 10px;
+   
+}
+
+div a:hover{
+    color: aqua;
+}
+
+div div a:hover{
+    color:aqua;
+}
+
